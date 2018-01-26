@@ -1,0 +1,1 @@
+(objdump -d bootloader_64bit_stage_with_caller.pe | c++filt)>out

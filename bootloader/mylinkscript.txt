@@ -1,0 +1,13 @@
+SECTIONS
+{
+    . = 0x11E00;
+    .text :
+    {
+        bootloader_64bit_stage_caller.elf(.text) /* Ensure that the code in bootloader_64bit_stage_caller.asm is placed at 0x11E00, because the 16-bit stage mindlessly jumps there, since it's not linked with the 64-bit stages */
+        EXCLUDE_FILE (bootloader_64bit_stage_caller.elf) *(.text) /* Once bootloader caller is placed at 0x11E00, append code from the rest of the input files. */
+    }
+    .rdata : { *(.rdata) } /* .rdata contains string constants, like "this" */
+    .rodata : { *(.rodata) } /* .rodata contains read-only constants */
+    .data : { *(.data) } /* .data contains global variables */
+    .bss : { *(.bss) } /* .bss contains uninitialized global variables */
+}
