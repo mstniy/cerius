@@ -1,4 +1,4 @@
-.# cerius
+# cerius
 The Cerius operating system
 
 ### What can it do?
