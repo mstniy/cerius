@@ -26,7 +26,7 @@ To create the image, which can be emulated or written to a real disk, do a `make
 After you create the image, you can use an emulator (like Bochs, Qemu or Virtualbox).
 If you have Qemu installed, you can do a quick `make simqemu`.
 You may also write the image on a real disk and boot real hardware from it (`dd` or Rufus should be fine).
-And of course, you'll need an AMD64 CPU.
+To run it on real hardware, you'll also need an AMD64 CPU.
 
 ### I have an Intel CPU, can it run Cerius?
 If it's a 64-bit processor, almost certainly.
